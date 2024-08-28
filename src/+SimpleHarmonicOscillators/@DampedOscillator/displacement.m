@@ -1,6 +1,6 @@
 function x = displacement(sho, t_end, opt)
     arguments
-        sho DampedOscillator
+        sho SimpleHarmonicOscillators.DampedOscillator
         t_end (1,1) double {mustBeNonnegative} = 1.0
         opt.TimeResolution (1,1) double {mustBePositive} = 0.1
         opt.InitialPosition (1,1) double = 1.0
