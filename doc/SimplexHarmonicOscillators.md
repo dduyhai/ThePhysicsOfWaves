@@ -1,17 +1,33 @@
-$\providecommand\lr[1]{\left(#1\right)}$
-$\providecommand\Lr[1]{\left[#1\right]}$
-$\providecommand\Exp[1]{\exp\lr{#1}}$
-$\providecommand\Cos[1]{\mathrm{cos}\lr{#1}}$
-$\providecommand\Sin[1]{\mathrm{sin}\lr{#1}}$
+$$
+\newcommand\lr[1]{\left(#1\right)}
+$$
+
+$$
+\newcommand\Lr[1]{\left[#1\right]}
+$$
+
+$$
+\newcommand\Exp[1]{\exp\lr{#1}}
+$$
+
+$$
+\newcommand\Cos[1]{\mathrm{cos}\lr{#1}}
+$$
+
+$$
+\newcommand\Sin[1]{\mathrm{sin}\lr{#1}}
+$$
 
 # Simple harmonic oscillators
 
 ## Damped oscilators
 
-Consider the generic form for damped motion close to equilibrium
+Consider the generic form for damped motion close to equilibrium:
 $$
     \dfrac{d^2 x}{dt^2} + \gamma \dfrac{dx}{dt} + \omega_0^2 x = 0.
 $$
+
+$\Sin{x}$ is a function of x
 
 Depending on relationship between $\omega_0$ and $\gamma$, we will have different damping behaviors:
 * Underdamping when $\gamma < 2\omega_0$: the object oscilates but the amplitude slowly goes down in time.
