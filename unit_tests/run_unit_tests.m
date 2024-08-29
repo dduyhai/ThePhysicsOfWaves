@@ -2,6 +2,10 @@ function test_res = run_unit_tests(opt)
     arguments
         opt.Pattern {mustBeTextScalar} = "*"
     end
+    cur_dir = fileparts(mfilename('fullpath'));
+    src_dir = fullfile(cur_dir, "../src/");
+    old_path = addpath(src_dir);
+
     test_res = [];
     test_suites = matlab.unittest.TestSuite.fromFolder(pwd(), ...
         Name = opt.Pattern);
@@ -9,9 +13,6 @@ function test_res = run_unit_tests(opt)
         return;
     end
 
-    cur_dir = fileparts(mfilename('fullpath'));
-    src_dir = fullfile(cur_dir, "../src/");
-    old_path = addpath(src_dir);
     try
         test_res = run(test_suites);
     catch ME
