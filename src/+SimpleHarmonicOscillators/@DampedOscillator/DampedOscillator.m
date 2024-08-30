@@ -4,7 +4,7 @@ properties (GetAccess = public, SetAccess = public)
     damping_coef (1,1) double {mustBeNonnegative} = 0.0
 end
 
-methods
+methods (Access = public)
     function obj = DampedOscillator(omega_0, gamma)
         arguments
             omega_0 (1,1) double {mustBePositive} = 1.0
@@ -47,12 +47,17 @@ methods
     function tf = is_critical_damping(sho)
         tf = (sho.damping_coef == 2.0 * sho.natural_angular_freq);
     end
+
+    function str = display_name(sho)
+        str = compose("Angular freq. = %6.2f, Damping coef. = %6.2f", ...
+            sho.natural_angular_freq, sho.damping_coef);
+    end
 end
 
 methods
-    x = displacement(sho, t_end, opt);
-    x = displacement_for_underdamping_case(sho, t_end, opt);
-    x = displacement_for_overdamping_case(sho, t_end, opt);
-    x = displacement_for_critical_damping_case(sho, t_end, opt);
+    [x, t] = displacement(sho, t_end, opt);
+    [x, t] = displacement_for_underdamping_case(sho, t_end, opt);
+    [x, t] = displacement_for_overdamping_case(sho, t_end, opt);
+    [x, t] = displacement_for_critical_damping_case(sho, t_end, opt);
 end
 end

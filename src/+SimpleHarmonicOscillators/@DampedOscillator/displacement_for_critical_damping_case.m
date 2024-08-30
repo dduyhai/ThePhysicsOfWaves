@@ -1,4 +1,4 @@
-function x = displacement_for_critical_damping_case(sho, t_end, opt)
+function [x, t] = displacement_for_critical_damping_case(sho, t_end, opt)
     arguments
         sho SimpleHarmonicOscillators.DampedOscillator
         t_end (1,1) double {mustBeNonnegative} = 1.0

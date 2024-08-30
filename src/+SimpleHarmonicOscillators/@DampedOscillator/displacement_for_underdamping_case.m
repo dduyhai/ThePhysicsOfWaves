@@ -1,4 +1,4 @@
-function x = displacement_for_underdamping_case(sho, t_end, opt)
+function [x, t] = displacement_for_underdamping_case(sho, t_end, opt)
     arguments
         sho SimpleHarmonicOscillators.DampedOscillator
         t_end (1,1) double {mustBeNonnegative} = 1.0
@@ -24,5 +24,5 @@ function x = displacement_for_underdamping_case(sho, t_end, opt)
 
     t_beg = 0;
     t = (t_beg:opt.TimeResolution:t_end);
-    x = A .* exp((-0.5 * sho.damping_coef) .* t) .* cos(omega_u * t + phi); 
+    x = A .* exp((-0.5 * sho.damping_coef) .* t) .* cos(omega_u .* t + phi); 
 end
